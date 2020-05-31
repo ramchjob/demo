@@ -6,3 +6,8 @@ CREATE TABLE customer (
   last_name VARCHAR(250) NOT NULL,
   email VARCHAR(250) DEFAULT NULL
 );
+
+INSERT INTO customer (first_name, last_name, email) VALUES
+  ('Shanvi', 'Ch', 'shanvi@ch.com'),
+  ('Kritk', 'Ch', 'kritk@ch.com'),
+  ('Ram', 'Ch', 'ram@ch.com');
