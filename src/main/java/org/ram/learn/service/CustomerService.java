@@ -1,5 +1,7 @@
 package org.ram.learn.service;
 
+import java.util.List;
+
 import org.ram.learn.model.Customer;
 import org.ram.learn.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,11 @@ public class CustomerService {
 
     public void deleteCustomer(Integer customerId) {
         repository.deleteById(customerId);
+    }
+
+    public List<Customer> getCustomers() {
+        return repository.findAll();
+        
     }
 
 }
