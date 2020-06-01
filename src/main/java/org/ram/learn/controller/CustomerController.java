@@ -1,5 +1,7 @@
 package org.ram.learn.controller;
 
+import java.util.List;
+
 import org.ram.learn.model.Customer;
 import org.ram.learn.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,11 @@ public class CustomerController {
     @PutMapping(produces = "application/json", value = "/customers")
     private Customer updateCustomer(Integer customerId, Customer customer) {
         return customerService.updateCustomer(customerId, customer);
+    }
+    
+    @GetMapping(produces = "application/json", value = "/customers")
+    private List<Customer> getCustomers() {
+        return customerService.getCustomers();
     }
     
     @DeleteMapping(produces = "application/json", value = "/customers")
