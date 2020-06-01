@@ -25,5 +25,6 @@ CREATE TABLE customer (
 INSERT INTO customer (first_name, last_name, email, status_id) VALUES
   ('Shan', 'Ch', 'shan@ch.com', 1),
   ('Krit', 'Ch', 'krit@ch.com', 1),
+  ('Lav', 'Ch', 'lav@ch.com', 1),
   ('Ram', 'Ch', 'ram@ch.com', 1);
 

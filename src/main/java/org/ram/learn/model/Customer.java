@@ -9,11 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
-@Entity(name = "customer")
+@Entity
+@Table(name = "customer")
 public class Customer {
     
     @Id
@@ -29,8 +31,9 @@ public class Customer {
     
     @Column(name = "email")
     private String email;
+ 
     
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
-    private Status status;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "status_id", referencedColumnName = "id")
+    private Status status; 
 }
