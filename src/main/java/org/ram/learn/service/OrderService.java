@@ -33,10 +33,10 @@ public class OrderService {
 
     public Order updateOrder(Integer orderId, Order order) throws NotFoundException {
         Optional<Order> existingOrder =  repository.findById(orderId);
-        if (existingOrder.isEmpty()) {
-            throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
+        if (existingOrder.isPresent()) {
+            return repository.save(order);
         }
-        return repository.save(order);
+        throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
     }
 
     public List<Order> getOrders() {
