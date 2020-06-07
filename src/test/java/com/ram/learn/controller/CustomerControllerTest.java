@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.ram.learn.controller;
 
 import org.junit.Before;
 import org.junit.Test;
