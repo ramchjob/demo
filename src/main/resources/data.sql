@@ -1,6 +1,10 @@
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS status;
 
+DROP SEQUENCE IF EXISTS CUSTOMER_SEQUENCE;
+
+CREATE SEQUENCE CUSTOMER_SEQUENCE;
+
 CREATE TABLE status (
   id INT PRIMARY KEY,
   status_name VARCHAR(250) NOT NULL
@@ -30,11 +34,4 @@ CREATE TABLE customer (
   CONSTRAINT FK_customer_status foreign key (status_id) references status(id)
 );
 
-
-
-INSERT INTO customer (first_name, last_name, email, status_id) VALUES
-  ('Shan', 'Ch', 'shan@ch.com', 1),
-  ('Krit', 'Ch', 'krit@ch.com', 1),
-  ('Lav', 'Ch', 'lav@ch.com', 1),
-  ('Ram', 'Ch', 'ram@ch.com', 1);
 
