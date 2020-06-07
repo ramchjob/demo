@@ -1,10 +1,24 @@
 DROP TABLE IF EXISTS customer;
 DROP TABLE IF EXISTS status;
 
+DROP SEQUENCE IF EXISTS CUSTOMER_SEQUENCE;
+
+CREATE SEQUENCE CUSTOMER_SEQUENCE;
+
 CREATE TABLE status (
   id INT PRIMARY KEY,
   status_name VARCHAR(250) NOT NULL
 );
+
+CREATE TABLE c_order (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  order_date TIMESTAMP NOT NULL,
+  customer_id INT NOT NULL,
+  priority BOOLEAN DEFAULT FALSE,
+  status_id INT,
+  CONSTRAINT FK_order_status_status foreign key (status_id) references status(id)
+);
+
 
 INSERT INTO status (id, status_name) VALUES
   (1, 'NEW'),
@@ -20,11 +34,4 @@ CREATE TABLE customer (
   CONSTRAINT FK_customer_status foreign key (status_id) references status(id)
 );
 
-
-
-INSERT INTO customer (first_name, last_name, email, status_id) VALUES
-  ('Shan', 'Ch', 'shan@ch.com', 1),
-  ('Krit', 'Ch', 'krit@ch.com', 1),
-  ('Lav', 'Ch', 'lav@ch.com', 1),
-  ('Ram', 'Ch', 'ram@ch.com', 1);
 
