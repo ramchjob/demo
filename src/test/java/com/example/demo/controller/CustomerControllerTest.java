@@ -48,7 +48,8 @@ public class CustomerControllerTest {
     
     @Test
     public void testUpdateCustomer() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.put("/customer")).andExpect(MockMvcResultMatchers.status().is(200));
+        Customer customer = new Customer();
+        mockMvc.perform(MockMvcRequestBuilders.put("/customer/1").content(new ObjectMapper().writeValueAsString(customer)).contentType(MediaType.APPLICATION_JSON)).andExpect(MockMvcResultMatchers.status().is(200));
     }
     
     @Test

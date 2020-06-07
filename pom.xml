@@ -17,6 +17,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<sonar.projectKey>ramchjob_demo</sonar.projectKey>
+		<sonar.organization>ramchjob</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.login>7330951e2458d97577abe27fea1126f5890b8458</sonar.login>
 	</properties>
 
 	<dependencies>
