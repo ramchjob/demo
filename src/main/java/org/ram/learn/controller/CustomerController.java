@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javassist.NotFoundException;
+
 @RestController
 public class CustomerController {
 
@@ -20,7 +22,7 @@ public class CustomerController {
     private CustomerService customerService;
     
     @GetMapping(produces = "application/json", value = "/customer/{customerId}")
-    private Customer getCustomer(@PathVariable Integer customerId) {
+    private Customer getCustomer(@PathVariable Integer customerId) throws NotFoundException {
         return customerService.getCustomer(customerId);
     }
     
