@@ -1,4 +1,4 @@
-package org.ram.learn.service;
+package org.ram.learn.repository;
 
 import org.ram.learn.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
