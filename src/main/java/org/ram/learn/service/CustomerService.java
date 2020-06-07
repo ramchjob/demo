@@ -20,7 +20,7 @@ public class CustomerService {
     public Customer getCustomer(Integer customerId) throws NotFoundException {
         Optional<Customer> customer = repository.findById(customerId);
         if (customer.isPresent()) {
-            return repository.findById(customerId).get();
+            return customer.get();
         }
         throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
     }

@@ -24,27 +24,27 @@ public class OrderController {
     private OrderService orderService;
     
     @GetMapping(produces = "application/json", value = "/order/{orderId}")
-    private Order getOrder(@PathVariable Integer orderId) throws NotFoundException {
+    public Order getOrder(@PathVariable Integer orderId) throws NotFoundException {
         return orderService.getOrder(orderId);
     }
     
     @PostMapping(produces = "application/json", value = "/orders")
-    private Order createOrder(@RequestBody  Order order) {
+    public Order createOrder(@RequestBody  Order order) {
         return orderService.createOrder(order);
     }
     
     @PutMapping(produces = "application/json", value = "/order/{orderId}")
-    private Order updateOrder(@PathVariable Integer orderId, @RequestBody Order order) throws NotFoundException {
+    public Order updateOrder(@PathVariable Integer orderId, @RequestBody Order order) throws NotFoundException {
         return orderService.updateOrder(orderId, order);
     }
     
     @GetMapping(produces = "application/json", value = "/orders")
-    private List<Order> getOrders() {
+    public List<Order> getOrders() {
         return orderService.getOrders();
     }
     
     @DeleteMapping(produces = "application/json", value = "/order/{orderId}")
-    private void deleteOrder(@PathVariable Integer orderId) {
+    public void deleteOrder(@PathVariable Integer orderId) {
         orderService.deleteOrder(orderId);
     }
     

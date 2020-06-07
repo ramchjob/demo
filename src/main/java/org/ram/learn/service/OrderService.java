@@ -31,7 +31,7 @@ public class OrderService {
     }
 
     public Order updateOrder(Integer orderId, Order order) throws NotFoundException {
-        if (null != repository.findById(orderId)) {
+        if (repository.findById(orderId).isEmpty()) {
             throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
         }
         return repository.save(order);

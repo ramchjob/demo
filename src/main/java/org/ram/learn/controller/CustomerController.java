@@ -22,27 +22,27 @@ public class CustomerController {
     private CustomerService customerService;
     
     @GetMapping(produces = "application/json", value = "/customer/{customerId}")
-    private Customer getCustomer(@PathVariable Integer customerId) throws NotFoundException {
+    public Customer getCustomer(@PathVariable Integer customerId) throws NotFoundException {
         return customerService.getCustomer(customerId);
     }
     
     @PostMapping(produces = "application/json", value = "/customers")
-    private Customer createCustomer(@RequestBody  Customer customer) {
+    public Customer createCustomer(@RequestBody  Customer customer) {
         return customerService.createCustomer(customer);
     }
     
     @PutMapping(produces = "application/json", value = "/customer/{customerId}")
-    private Customer updateCustomer(@PathVariable Integer customerId, @RequestBody Customer customer) {
+    public Customer updateCustomer(@PathVariable Integer customerId, @RequestBody Customer customer) {
         return customerService.updateCustomer(customerId, customer);
     }
     
     @GetMapping(produces = "application/json", value = "/customers")
-    private List<Customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return customerService.getCustomers();
     }
     
     @DeleteMapping(produces = "application/json", value = "/customer/{customerId}")
-    private void deleteCustomer(@PathVariable Integer customerId) {
+    public void deleteCustomer(@PathVariable Integer customerId) {
         customerService.deleteCustomer(customerId);
     }
     
