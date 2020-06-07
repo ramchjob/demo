@@ -1,37 +1,48 @@
 package org.ram.learn.service;
 
 import java.util.List;
+import java.util.Optional;
 
-import org.ram.learn.model.Customer;
-import org.ram.learn.repository.CustomerRepository;
+import org.ram.learn.config.AppConstant;
+import org.ram.learn.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javassist.NotFoundException;
 
 @Service
 public class OrderService {
 
     @Autowired
-    CustomerRepository repository;
+    OrderRepository repository;
     
-    public Customer getCustomer(Integer customerId) {
-        return repository.findById(customerId).get();
+    public Order getOrder(Integer orderId) throws NotFoundException {
+       
+        Optional<Order> order =  repository.findById(orderId);
+        if (order.isPresent()) {
+            return order.get();    
+        }
+
+        throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
     }
 
-    public Customer createCustomer(Customer customer) {
-        return repository.save(customer);
+    public Order createOrder(Order order) {
+        return repository.save(order);
     }
 
-    public Customer updateCustomer(Integer customerId, Customer customer) {
-        return repository.save(customer);
+    public Order updateOrder(Integer orderId, Order order) throws NotFoundException {
+        if (null != repository.findById(orderId)) {
+            throw new NotFoundException(AppConstant.RESOURCE_NOT_FOUND);
+        }
+        return repository.save(order);
     }
 
-    public void deleteCustomer(Integer customerId) {
-        repository.deleteById(customerId);
-    }
-
-    public List<Customer> getCustomers() {
+    public List<Order> getOrders() {
         return repository.findAll();
-        
+    }
+
+    public void deleteOrder(Integer orderId) {
+        repository.deleteById(orderId);
     }
 
 }
