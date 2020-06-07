@@ -6,6 +6,16 @@ CREATE TABLE status (
   status_name VARCHAR(250) NOT NULL
 );
 
+CREATE TABLE c_order (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  order_date TIMESTAMP NOT NULL,
+  customer_id INT NOT NULL,
+  priority BOOLEAN DEFAULT FALSE,
+  status_id INT,
+  CONSTRAINT FK_order_status_status foreign key (status_id) references status(id)
+);
+
+
 INSERT INTO status (id, status_name) VALUES
   (1, 'NEW'),
   (2, 'ACTIVE'),

@@ -28,7 +28,7 @@ public class Order {
     private Instant orderDate;
     
     @Column(name = "customer_id")
-    private String customerId;
+    private Integer customerId;
     
     @Column(name = "priority")
     private Boolean isPriority;
