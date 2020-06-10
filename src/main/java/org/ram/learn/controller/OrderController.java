@@ -2,8 +2,8 @@ package org.ram.learn.controller;
 
 import java.util.List;
 
-import org.ram.learn.model.Customer;
-import org.ram.learn.model.Order;
+import org.ram.learn.entity.Customer;
+import org.ram.learn.entity.Order;
 import org.ram.learn.service.CustomerService;
 import org.ram.learn.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;

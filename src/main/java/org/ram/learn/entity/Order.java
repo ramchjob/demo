@@ -1,4 +1,4 @@
-package org.ram.learn.model;
+package org.ram.learn.entity;
 
 import java.time.Instant;
 

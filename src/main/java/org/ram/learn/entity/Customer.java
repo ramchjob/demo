@@ -1,4 +1,4 @@
-package org.ram.learn.model;
+package org.ram.learn.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

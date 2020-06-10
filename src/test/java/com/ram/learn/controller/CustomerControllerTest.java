@@ -8,7 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.ram.learn.controller.CustomerController;
-import org.ram.learn.model.Customer;
+import org.ram.learn.entity.Customer;
 import org.ram.learn.service.CustomerService;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
