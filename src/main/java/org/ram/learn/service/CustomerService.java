@@ -4,14 +4,16 @@ import java.util.List;
 import java.util.Optional;
 
 import org.ram.learn.config.AppConstant;
-import org.ram.learn.model.Customer;
+import org.ram.learn.entity.Customer;
 import org.ram.learn.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javassist.NotFoundException;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class CustomerService {
 
     @Autowired
@@ -26,6 +28,7 @@ public class CustomerService {
     }
 
     public Customer createCustomer(Customer customer) {
+       
         return repository.save(customer);
     }
 

@@ -1,4 +1,4 @@
-package org.ram.learn.model;
+package org.ram.learn.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 import lombok.Data;
 
@@ -27,6 +28,7 @@ public class Customer {
     @Column(name = "last_name")
     private String lastName;
     
+    @Email
     @Column(name = "email")
     private String email;
  

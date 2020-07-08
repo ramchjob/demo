@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.ram.learn.config.AppConstant;
-import org.ram.learn.model.Order;
+import org.ram.learn.entity.Order;
 import org.ram.learn.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
