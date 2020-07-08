@@ -35,7 +35,7 @@ public class CustomerController {
     private CustomerService customerService;
     
     @GetMapping(produces = "application/json", value = "/customer/{customerId}")
-    public ResponseEntity<Customer> getCustomer(@Valid @PathVariable (required = true) Integer customerId) throws CustomerServiceException, SQLException {
+    public ResponseEntity<Customer> getCustomer(@Valid @PathVariable (required = true) Integer customerId) throws CustomerServiceException, SQLException, NotFoundException {
         log.info("Get customer for given customer Id {}", customerId);
         Customer customer =  customerService.getCustomer(customerId);
         return ResponseEntity.ok(customer);
